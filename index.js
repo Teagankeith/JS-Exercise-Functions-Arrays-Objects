@@ -75,9 +75,13 @@ function temperatureCtoF(temp) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(f, c) {
-  temperatureCtoF(c);
-
+function temperatureInF(temp, unit){
+  if(unit === 'c') {
+    let unite = temperatureCtoF(temp) + 'F'
+    return unite
+  } else {
+    return Math.round(temp) + unit
+  }
 
 }
 
@@ -99,7 +103,12 @@ function temperatureInF(f, c) {
  * }
 */
 function makePersonObject(id, name, email) {
-  return "id: " + id + ", name: "+ name +", email: " + email + ",";
+  const person = {
+    id: id,
+    name: '' +name,
+    email: '' + email
+  }
+  return person; 
 }
 
 /**
@@ -115,9 +124,10 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
-}
+function getName(person)
+ {
+  return "Hello, my name is " + person.name; 
+  }
 
 
 /**
@@ -135,8 +145,8 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(array) {
+  return array.indexOf("apple")
 }
 
 /**
@@ -154,9 +164,16 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
-}
+function isItAnApple(arr) {
+    for(let i = 0; i < arr.length; i ++)
+    {
+      if(arr[i] = 'apple') {
+        return true
+      } else {
+        return false
+      }
+    }
+    }
 
 
 
@@ -213,7 +230,6 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
 }
 
 /**
@@ -258,7 +274,7 @@ function getModelYears(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
+function getCarInfoById(inventory, id) {
   /* code here */
 }
 
@@ -276,7 +292,7 @@ function getCarInfoById(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
+function getOlderCars(invetory, year) {
   /* code here */
 }
 
@@ -293,8 +309,8 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(inventory) {
+  return 
 }
 
 /**
