@@ -76,9 +76,9 @@ function temperatureCtoF(temp) {
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
 function temperatureInF(temp, unit){
-  if(unit === 'c') {
-    let unite = temperatureCtoF(temp) + 'F'
-    return unite
+  if(unit === 'C') {
+    let combine = temperatureCtoF(temp) + 'F'
+    return combine
   } else {
     return Math.round(temp) + unit
   }
@@ -165,15 +165,19 @@ function appleIndex(array) {
  * the returned value should be: [ false, true, false, false, true, false ].
 */
 function isItAnApple(arr) {
-    for(let i = 0; i < arr.length; i ++)
-    {
-      if(arr[i] = 'apple') {
-        return true
-      } else {
-        return false
-      }
+  var i;
+  var conditionArr = [];
+
+  for(i = 0; i < arr.length; i++){
+    if(arr[i]==='apple'){
+      conditionArr.push(true);
     }
+    else{
+      conditionArr[i] = false;
     }
+  } 
+  return conditionArr;
+  }
 
 
 
@@ -230,6 +234,9 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
+  const thisCar = inventory[index];
+  const info = `This is a ${thisCar.car_make} ${thisCar.car_model}`;
+  return info;
 }
 
 /**
